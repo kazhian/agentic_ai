@@ -1,0 +1,15 @@
+openai
+
+langgraph
+langgraph-prebuilt
+
+langchain
+langchain-core
+langchain-openai
+langchain-community
+langchain_openai
+
+dotenv
+
+mypy
+pydantic
