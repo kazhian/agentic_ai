@@ -66,7 +66,7 @@ source .venv/bin/activate
 #### 3. Install Python Dependencies
 ```bash
 # Install required packages (make sure .venv is activated)
-pip install langchain langchain-openai langgraph langchain-community python-dotenv tavily-python
+pip install langchain langchain-openai langgraph langchain-community python-dotenv tavily-python crewai
 ```
 
 #### 4. Get API Keys
@@ -99,6 +99,34 @@ python 01_setup/01_direct_interaction.py
 
 If the setup is correct, you'll see a successful AI response. If not, check your API keys and Python installation.
 
+#### 7. Setup Markdown Display (Optional)
+
+For better markdown rendering when viewing CrewAI outputs:
+
+**VS Code Built-in Preview** (Recommended):
+- Open any .md file in VS Code
+- Press Ctrl+Shift+V (Windows/Linux) or Cmd+Shift+V (Mac)
+- Or click the preview icon in the top right
+
+**Python Libraries for Enhanced Display**:
+```bash
+# For terminal rendering
+pip install rich
+
+# For HTML conversion
+pip install markdown
+```
+
+**Desktop Apps**:
+- Typora (paid, beautiful)
+- Mark Text (free)
+- Obsidian (free, powerful)
+
+**Online Viewers**:
+- https://markdownlivepreview.com/
+- https://dillinger.io/
+- GitHub Gists
+
 ## 📁 Project Structure
 
 ```
@@ -107,6 +135,8 @@ If the setup is correct, you'll see a successful AI response. If not, check your
 ├── 03_lc_tool_integ/   # Tool integration examples
 ├── 04_lc_memory/       # Memory and conversation persistence
 ├── 05_multi_step_agent/# Multi-step agent workflows
+├── 06_crewai_multi_agent/# CrewAI multi-agent orchestration
+├── 07_autonomous_agents/# AutoGPT-style autonomous agents
 ├── 09_industry_case/   # Real-world industry applications
 └── 11_ethical_consideration/ # AI ethics and safety
 ```
@@ -118,13 +148,16 @@ If the setup is correct, you'll see a successful AI response. If not, check your
 3. **Tools**: `03_lc_tool_integ/` - Add external capabilities
 4. **Memory**: `04_lc_memory/` - Enable conversation persistence
 5. **Workflows**: `05_multi_step_agent/` - Build multi-step agents
-6. **Applications**: `09_industry_case/` - Real-world implementations
-7. **Ethics**: `11_ethical_consideration/` - Responsible AI development
+6. **Multi-Agent**: `06_crewai_multi_agent/` - Orchestrate agent crews
+7. **Autonomous**: `07_autonomous_agents/` - Explore AutoGPT-style autonomous agents
+8. **Applications**: `09_industry_case/` - Real-world implementations
+9. **Ethics**: `11_ethical_consideration/` - Responsible AI development
 
 ## 🛠️ Key Technologies
 
 - **LangChain**: Framework for building AI applications
 - **LangGraph**: Stateful workflow orchestration
+- **CrewAI**: Multi-agent collaboration and orchestration
 - **OpenAI**: GPT models for language understanding
 - **Tavily**: Web search and information retrieval
 - **Python**: Core programming language
@@ -133,6 +166,7 @@ If the setup is correct, you'll see a successful AI response. If not, check your
 
 - Building conversational AI agents
 - Creating multi-step workflows
+- Orchestrating multi-agent systems
 - Integrating external tools and APIs
 - Managing conversation memory
 - Implementing industry-specific solutions
@@ -181,7 +215,7 @@ python -m venv .venv
 # 4. Install VS Code extensions: Python, Jupyter, Python Docstring Generator, GitLens
 
 # 5. Install dependencies (in virtual environment)
-pip install langchain langchain-openai langgraph langchain-community python-dotenv tavily-python
+pip install langchain langchain-openai langgraph langchain-community python-dotenv tavily-python crewai
 
 # 6. Set up your API keys in .env file
 cp template.env .env
@@ -189,6 +223,9 @@ cp template.env .env
 
 # 7. Test everything works
 python 01_setup/01_direct_interaction.py
+
+# 8. Setup markdown display (optional)
+# Follow the "Setup Markdown Display" section above
 ```
 
 ## 📖 Additional Resources
