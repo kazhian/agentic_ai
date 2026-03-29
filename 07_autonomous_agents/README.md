@@ -26,6 +26,12 @@ This module introduces **autonomous agents** - AI systems that can operate indep
 - **Memory Management**: Maintains both short-term and long-term memory
 - **Self-Correction**: Can review its work and try different approaches
 
+## 🔍 How to Think About Terms
+- **Autonomous agent** is the general concept: an AI that can accept a goal, plan actions, use tools, and keep working with minimal human direction.
+- **AutoGPT** is a concrete style/implementation of that concept, with recursive task creation and an execution loop.
+- **LangChain** is a broader framework for building LLM applications, including agents, tool chains, and workflows.
+- **CrewAI** is a framework for coordinating multiple agents and role-based task orchestration, which can be used to build autonomous-style workflows.
+
 ## 🏗️ Core Architecture Components
 
 ### 1. Goal Decomposition
