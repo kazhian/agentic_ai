@@ -37,11 +37,13 @@ def analyze_sentiment(message: str, api_key: str = None) -> Dict[str, Any]:
 
     system_message = """
         You are a sentiment analysis assistant. 
-        Classify the sentiment of the provided customer review as either positive or negative.
+        Classify the sentiment of the provided customer review as either positive, neutral or negative.
+        Also, if the sentiment is negative, provide a brief explanation of why it is negative.
 
         Respond with a JSON object in the following format:
         {
-            "sentiment": "positive" or "negative"
+            "sentiment": "positive" or "neutral" or "negative",
+            "explanation": "brief explanation if sentiment is negative"
         }
 
         Do not include any other text or explanation in your response. Only return the JSON object.
@@ -95,7 +97,9 @@ def main():
                 print(f"Error: {result['error']}")
             else:
                 sentiment = result.get('sentiment', 'unknown').capitalize()
+                explanation = result.get('explanation', 'No explanation provided')
                 print(f"\nSentiment: {sentiment}")
+                print(f"Explanation: {explanation}")
         except Exception as e:
             print(f"An error occurred: {str(e)}")
 
