@@ -15,6 +15,16 @@ LangChain uses a hierarchical message system where all messages inherit from `Ba
 | **AIMessage** | BaseMessage | Represents AI model response | `content`, `tool_calls`, `name` (optional) |
 | **ToolMessage** | BaseMessage | Represents tool execution result | `content`, `tool_call_id`, `name` (optional) |
 
+```mermaid
+flowchart LR
+    User["Human role"] -->|HumanMessage| Assistant["Assistant role"]
+    Assistant -->|prompt / AIMessage| LLM["LLM"]
+    LLM -->|AIMessage| Assistant
+    Assistant -->|Tool call| Tool["Tool role"]
+    Tool -->|ToolMessage| Assistant
+    Assistant -->|AIMessage| User
+```
+
 ### Detailed Breakdown
 
 #### BaseMessage

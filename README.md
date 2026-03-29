@@ -1,4 +1,4 @@
-# Agentic AI Learning Project
+# AgenticAI: An Experimental Approach to Autonomous Intelligence
 
 A comprehensive collection of AI agent implementations demonstrating various LangChain and LangGraph capabilities for building intelligent, multi-step systems.
 
@@ -130,16 +130,47 @@ pip install markdown
 ## 📁 Project Structure
 
 ```
-├── 01_setup/           # Basic setup and direct API interaction
-├── 02_langchain/       # LangChain fundamentals and chains
-├── 03_lc_tool_integ/   # Tool integration examples
-├── 04_lc_memory/       # Memory and conversation persistence
-├── 05_multi_step_agent/# Multi-step agent workflows
-├── 06_crewai_multi_agent/# CrewAI multi-agent orchestration
-├── 07_autonomous_agents/# AutoGPT-style autonomous agents
-├── 09_industry_case/   # Real-world industry applications
+├── 01_setup/              # Basic setup and direct API interaction
+├── 02_langchain/          # LangChain fundamentals and chains
+├── 03_lc_tool_integ/      # Tool integration examples
+├── 04_lc_memory/          # Memory and conversation persistence
+├── 05_multi_step_agent/   # Multi-step agent workflows
+├── 06_crewai_multi_agent/ # CrewAI multi-agent orchestration
+├── 07_autonomous_agents/  # AutoGPT-style autonomous agents
+├── 09_industry_case/      # Real-world industry applications
 └── 11_ethical_consideration/ # AI ethics and safety
 ```
+
+## 🧭 Course Module Map
+
+This course is organized around the topics for **AgenticAI: An Experimental Approach to Autonomous Intelligence**.
+
+1. **Setting up Agentic AI Development Environment**
+   - Covers virtual environments, dependency installation, API key configuration, and direct model interaction.
+2. **Building Agents with LangChain: Simple Question Answering**
+   - Includes basic LangChain agent patterns and Q&A examples.
+3. **Tool Integration with LangChain Agents: Web Search**
+   - Demonstrates how to add external tool capabilities like web search.
+4. **Memory Management in LangChain Agents: Conversational History**
+   - Teaches agent memory, chat history, and session persistence.
+5. **Creating Multi-Step Agents with LangChain Chains**
+   - Shows how to build multi-step workflows and chain-based agents.
+6. **Orchestrating Multi-Agent Systems with CrewAI**
+   - Walks through coordinated multi-agent workflows using CrewAI.
+7. **Exploring Autonomous Agents with AutoGPT**
+   - Introduces autonomous agent concepts and AutoGPT-style execution.
+8. **Evaluating Agent Performance using LangSmith (or similar tools)**
+   - Covers tracing and evaluation concepts using notebooks and examples.
+9. **Building an Agent for a Specific Industry Use Case — Customer Support**
+   - Demonstrates a customer support agent workflow and practical application.
+10. **Building an Agent for a Specific Industry Use Case — Financial Data Analysis**
+   - Describes a potential extension for building a domain-specific financial agent.
+11. **Exploring Ethical Considerations in Agent Behavior**
+   - Covers accountability, transparency, bias, privacy, and safety.
+12. **Final Project: Developing an Agentic AI Application for a Real-World Problem**
+   - The capstone project concept is to combine these modules into a complete, real-world agentic application.
+
+> Note: A dedicated 8th module is not currently present in the repository. The LangSmith and evaluation topics are covered within existing notebooks and can be expanded into their own module later.
 
 ## 🎯 Learning Path
 
