@@ -12,16 +12,35 @@ Welcome to the CrewAI multi-agent orchestration module! This section teaches you
 
 ## 📋 Prerequisites
 
-Before starting this module, ensure you've completed:
-- `01_setup/` - Basic environment configuration
-- `02_langchain/` - LangChain fundamentals
-- `05_multi_step_agent/` - Multi-step agent workflows
+Before starting this module, ensure you have:
+- A working Python environment (Python 3.10+ recommended)
+- Installed the required packages for this repo:
+  - `pip install -r requirements.txt`
+  - or at minimum `pip install crewai langchain-openai python-dotenv`
+- A `.env` file at the repository root containing:
+  - `OPENAI_API_KEY`
+  - `TAVILY_API_KEY` for web search support in `02_research_crew.py` and `03_content_creation_crew.py`
+- Completed or reviewed the prior modules for context:
+  - `01_setup/` — environment configuration and API key setup
+  - `02_langchain/` — LangChain fundamentals and message handling
+  - `05_multi_step_agent/` — multi-step agent workflow patterns
 
 ## 🚀 Quick Start
 
 ### Install Dependencies
 ```bash
-pip install crewai
+pip install -r requirements.txt
+```
+
+If you prefer to install only the core packages used by this module:
+```bash
+pip install crewai langchain-openai python-dotenv
+```
+
+### Configure Environment
+```bash
+cp template.env .env
+# then edit .env and set OPENAI_API_KEY and TAVILY_API_KEY
 ```
 
 ### Verify Setup

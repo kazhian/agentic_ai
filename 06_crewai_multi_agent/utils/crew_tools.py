@@ -18,7 +18,10 @@ import re
 from datetime import datetime
 from typing import Dict, Any, List
 from dotenv import load_dotenv
-from langchain_community.tools import TavilySearchResults
+try:
+    from langchain_tavily import TavilySearch as TavilySearchResults
+except ImportError:
+    from langchain_community.tools.tavily_search import TavilySearchResults
 from langchain_core.tools import BaseTool
 from pydantic import BaseModel, Field
 
@@ -29,12 +32,13 @@ class WebSearchTool(BaseTool):
     """Web search tool using Tavily API"""
     name: str = "web_search"
     description: str = "Search the web for current information on any topic"
-    
-    def __init__(self):
-        super().__init__()
+    search_tool: Any = None
+
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
         if not os.getenv("TAVILY_API_KEY"):
             print("⚠️ Warning: TAVILY_API_KEY not found. Web search may not work.")
-        
+
         self.search_tool = TavilySearchResults(
             max_results=5,
             search_depth="basic",

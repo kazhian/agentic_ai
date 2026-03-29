@@ -81,6 +81,11 @@ pip install langchain langchain-openai langgraph langchain-community python-dote
 - Sign up and get your API key
 - Copy the key (starts with `tvly-`)
 
+**LangSmith API Key:**
+- Visit [LangSmith](https://smith.langchain.com/) or [LangChain LangSmith](https://www.langchain.com/langsmith)
+- Sign up/login and create a new API key
+- Copy the key
+
 #### 5. Configure Environment
 ```bash
 # Copy the template file
@@ -89,6 +94,7 @@ cp template.env .env
 # Edit the .env file with your actual API keys
 # OPENAI_API_KEY='sk-proj-your-actual-key-here'
 # TAVILY_API_KEY='tvly-your-actual-key-here'
+# LANGSMITH_API_KEY='your-langsmith-api-key-here'
 ```
 
 #### 6. Verify Setup
@@ -137,6 +143,7 @@ pip install markdown
 ├── 05_multi_step_agent/   # Multi-step agent workflows
 ├── 06_crewai_multi_agent/ # CrewAI multi-agent orchestration
 ├── 07_autonomous_agents/  # AutoGPT-style autonomous agents
+├── 08_agent_evaluation/   # Evaluation and LangSmith tracing
 ├── 09_industry_case/      # Real-world industry applications
 └── 11_ethical_consideration/ # AI ethics and safety
 ```
@@ -170,7 +177,7 @@ This course is organized around the topics for **AgenticAI: An Experimental Appr
 12. **Final Project: Developing an Agentic AI Application for a Real-World Problem**
    - The capstone project concept is to combine these modules into a complete, real-world agentic application.
 
-> Note: A dedicated 8th module is not currently present in the repository. The LangSmith and evaluation topics are covered within existing notebooks and can be expanded into their own module later.
+> Note: Module `08_agent_evaluation/` has been added to provide dedicated LangSmith tracing and agent evaluation content.
 
 ## 🎯 Learning Path
 
