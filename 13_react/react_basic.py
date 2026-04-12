@@ -16,7 +16,7 @@ class Agent:
     def __call__(self, message):
         self.messages.append({"role": "user", "content": message})
         result = client.chat.completions.create(
-            model="gpt-4o-mini",
+            model="gpt-4o",
             temperature=0,
             messages=self.messages,
         )
@@ -126,7 +126,8 @@ def query_multi_turn(question, max_turns=5):
     while i < max_turns:
         i += 1
         result = bot(next_prompt)
-        # print(result)
+        print(f"#{i} ⁇ LLM Prompt: {next_prompt}")
+        print(f"🔉 Result from LLM: {result}")
         actions = [
             action_re.match(a)
             for a in result.split('\n')
@@ -137,15 +138,24 @@ def query_multi_turn(question, max_turns=5):
             if action not in known_actions:
                 raise Exception(f"Unknown action: {action}: {action_input}")
 
-            print(f" #{i} -- running {action} {action_input}")
+            print(f"🛠️ Executing a tool: {action}({action_input})")
             observation = known_actions[action](action_input)
             print("Observation:", observation)
             next_prompt = f"Observation: {observation}"
-        else:
-            return
+
+    print("\n" + "="*50)
+    print("📝 FULL CONVERSATION HISTORY")
+    print("="*50)
+    for i, message in enumerate(bot.messages, 1):
+        role = message["role"].upper()
+        content = message["content"]
+        print(f"\n[{i}] {role}:")
+        print("-" * 30)
+        print(content)
+    print("="*50)
 
 # for single turn query use this
 # query("What is the total price for 5 apples and 5 pineapples?")
 
 # for multi turn query use this
-query_multi_turn("What is the total price for 5 apples and 5 bananas?")
+query_multi_turn("What is the total price for 5 apples?")
